@@ -1,0 +1,166 @@
+:root {
+  --bg: #f4f1e8;
+  --card: #fdfbf5;
+  --accent: #6f8f72;
+  --accent-dark: #4f6d55;
+  --text: #2f3b31;
+  --muted: #6f756c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  background: radial-gradient(circle at top, #efeadb, var(--bg));
+  color: var(--text);
+}
+
+.app-shell {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1rem 1rem 6rem;
+}
+
+.view {
+  display: none;
+  gap: 1rem;
+}
+
+.view.active {
+  display: grid;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(79, 109, 85, 0.12);
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Playfair Display', serif;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+.subtitle,
+.lead,
+#todayDate,
+p {
+  color: var(--muted);
+}
+
+input,
+select,
+textarea,
+button {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #d2d8cd;
+  padding: 0.75rem;
+  margin: 0.35rem 0 0.75rem;
+  font: inherit;
+}
+
+button {
+  background: var(--accent);
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.75rem;
+}
+
+.service {
+  cursor: pointer;
+  border: 1px solid #dce1d6;
+}
+
+.module {
+  scroll-margin-top: 1rem;
+}
+
+.task-box {
+  background: #f1f5ed;
+  border-radius: 12px;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.recipe-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.recipe-card {
+  border: 1px solid #d9e1d2;
+  border-radius: 12px;
+  padding: 0.75rem;
+  background: #f8faf5;
+}
+
+.emotion-panels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+
+#emotionTimeline {
+  margin: 0;
+  padding-left: 1rem;
+  max-height: 190px;
+  overflow-y: auto;
+}
+
+.bar {
+  background: #dfe9da;
+  margin: 0.35rem 0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar span {
+  display: block;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.85rem;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4rem;
+  background: rgba(253, 251, 245, 0.95);
+  border-top: 1px solid #e2e6de;
+  padding: 0.6rem;
+}
+
+.bottom-nav button {
+  margin: 0;
+  background: #edf2e8;
+  color: var(--accent-dark);
+  display: grid;
+  place-items: center;
+}
+
+.bottom-nav svg {
+  width: 24px;
+  height: 24px;
+}
