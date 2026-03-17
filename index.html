@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sslow...App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="loginView" class="card view active">
+        <h1>Sslow...App</h1>
+        <p class="lead">
+          Una app de slow life para bajar el ritmo, cuidar tu mente y conectar con hábitos más conscientes.
+        </p>
+        <form id="loginForm">
+          <label for="name">Tu nombre</label>
+          <input id="name" type="text" placeholder="Ej. Lucía" required />
+          <label for="email">Correo</label>
+          <input id="email" type="email" placeholder="tu@email.com" required />
+          <button type="submit">Iniciar sesión</button>
+        </form>
+      </section>
+
+      <section id="homeView" class="view">
+        <header class="hero card">
+          <p class="subtitle">Bienvenida, <span id="userName">persona slow</span></p>
+          <h2 id="dailyPhrase"></h2>
+          <p id="todayDate"></p>
+        </header>
+
+        <div class="service-grid">
+          <article class="card service" data-target="habits">
+            <h3>Hábitos conscientes</h3>
+            <p>Rutinas diarias para vivir con intención y calma.</p>
+          </article>
+          <article class="card service" data-target="tasks">
+            <h3>Tareas slow</h3>
+            <p>Una práctica para hoy y otra para mañana.</p>
+          </article>
+          <article class="card service" data-target="recipes">
+            <h3>Slow recipes</h3>
+            <p>Recetas para cocinar sin prisa y disfrutar cada sabor.</p>
+          </article>
+          <article class="card service" data-target="emotions">
+            <h3>Diario emocional</h3>
+            <p>Registra cómo te sientes y mira tu evolución.</p>
+          </article>
+        </div>
+
+        <section id="habits" class="card module">
+          <h3>Hábitos conscientes</h3>
+          <ul>
+            <li>Respira 3 minutos antes de empezar el día.</li>
+            <li>Desconecta del móvil al comer.</li>
+            <li>Camina 15 minutos en un entorno verde.</li>
+            <li>Reduce un consumo impulsivo y reutiliza algo en casa.</li>
+          </ul>
+        </section>
+
+        <section id="tasks" class="card module">
+          <h3>Tareas del día</h3>
+          <div class="task-box">
+            <h4>Hoy</h4>
+            <p id="todayTask"></p>
+          </div>
+          <div class="task-box">
+            <h4>Mañana</h4>
+            <p id="tomorrowTask"></p>
+          </div>
+        </section>
+
+        <section id="recipes" class="card module">
+          <h3>Slow recipes</h3>
+          <div id="recipeList" class="recipe-list"></div>
+        </section>
+
+        <section id="emotions" class="card module">
+          <h3>¿Cómo te sientes hoy?</h3>
+          <form id="emotionForm">
+            <label for="emotionSelect">Selecciona una emoción</label>
+            <select id="emotionSelect" required>
+              <option value="">Elige una opción</option>
+              <option>Ansioso</option>
+              <option>Cansado</option>
+              <option>Abrumado</option>
+              <option>Triste</option>
+              <option>Alegre</option>
+              <option>Motivado</option>
+              <option>Ilusionado</option>
+              <option>En paz</option>
+            </select>
+            <button type="submit">Guardar emoción</button>
+          </form>
+          <div class="emotion-panels">
+            <div>
+              <h4>Calendario emocional</h4>
+              <ul id="emotionTimeline"></ul>
+            </div>
+            <div>
+              <h4>Evolución</h4>
+              <div id="emotionStats"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="notes" class="card module">
+          <h3>Bloc de notas</h3>
+          <textarea id="dailyNotes" rows="5" placeholder="Escribe tu reflexión del día..."></textarea>
+        </section>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button id="navLogin" title="Sesión" aria-label="Sesión">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm8 9a8 8 0 1 0-16 0"/></svg>
+      </button>
+      <button id="navHome" title="Inicio" aria-label="Inicio">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10.5V20h14v-9.5"/></svg>
+      </button>
+      <button id="navNotes" title="Diario" aria-label="Diario">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v5h5M9 12h6M9 16h6"/></svg>
+      </button>
+    </nav>
+
+    <script src="app.js"></script>
+  </body>
+</html>
